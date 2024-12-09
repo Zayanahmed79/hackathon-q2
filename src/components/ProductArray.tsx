@@ -64,7 +64,7 @@ export const LatestPro: ProductsTypeTwo[] = [
             title: "Comfort Handy Craft",
             price: 42.00,
             salePrice: 65.00,
-            image: "/images/l2.png",
+            image: "/images/rem.png",
             slug: "Comfort-Handy-Craft",
         },
         {
