@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Josefin_Sans, Lato } from "next/font/google";
 import CustomDropdown from "./CustomDropdown";
 import { CiSearch } from "react-icons/ci";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { CgMenuRightAlt } from "react-icons/cg";
 
 const jsfont = Josefin_Sans({ subsets: ["latin"] });

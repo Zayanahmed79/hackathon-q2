@@ -1,5 +1,5 @@
 type ProductsType = {
-    id: any,
+    id: string,
     title: string,
     price: number,
     image: string,
@@ -9,7 +9,7 @@ type ProductsType = {
     salePrice?: number
 }
 type ProductsTypeTwo = {
-    id: any,
+    id: string,
     title: string,
     price: number,
     image: string,
