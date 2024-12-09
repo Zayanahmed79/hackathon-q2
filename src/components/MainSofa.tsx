@@ -18,7 +18,7 @@ const MainSofa = () => {
                 <h1 className={`${jsfont.className} text-[35px] font-bold text-[#151875]`}>Unique Features Of leatest & <br />
                 Trending Poducts</h1>
                  <p className='text-[16px] font-medium text-[#acabc3] flex items-center gap-3'><span><GoDotFill className='text-[#f52b70] text-[16px]' /></span>All frames constructed with hardwood solids and laminates</p>
-                 <p className='text-[16px] font-medium text-[#acabc3] flex items-center gap-3'><span><GoDotFill className='text-blue-600 text-[16px]' /></span>Reinforced with double wood dowels, glue, screw - nails corner 
+                 <p className='text-[16px] font-medium text-[#acabc3] flex items-center gap-3'><span><GoDotFill className='text-blue-600 text-[16px]' /></span>Reinforced with double wood dowel, glue, screw - nails corner 
                  blocks and machine nails</p>
                  <p className='text-[16px] font-medium text-[#acabc3] flex items-center gap-3'><span><GoDotFill className='text-[#bf899b] text-[16px]' /></span>All Arms, backs and seats are structurally reinforced</p>
 
