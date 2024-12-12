@@ -39,9 +39,10 @@ const MainSofa = () => {
           <div className='flex gap-4 items-center'>
             <button className={`${jsfont.className} text-[17px] font-semibold text-white bg-[#fb2e86] rounded-[2px] px-5 py-2`}>Add to Cart</button>
 
-            <div className={`${jsfont.className} flex flex-col`}>
+            <div className={`${jsfont.className} flex flex-col text-[#151875] font-semibold`}>
               <h1>B&B Italian Sofa</h1>
-              <h1>B&B Italian Sofa</h1>
+              <h1 className={`${lato.className} font-normal`  }>$32.00</h1>
+              
             </div>
           </div>
         </div>
