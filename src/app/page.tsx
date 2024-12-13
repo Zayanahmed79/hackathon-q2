@@ -1,3 +1,4 @@
+import Discount from "@/components/Discount";
 import Featured from "@/components/Featured";
 import Hero from "@/components/Hero";
 import Latest from "@/components/Latest";
@@ -14,6 +15,7 @@ export default function Home() {
       <Offer/>
       <MainSofa/>
       <Trending/>
+      <Discount/>
     </div>
   );
 }
