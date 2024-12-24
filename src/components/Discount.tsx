@@ -32,8 +32,8 @@ const Discount = () => {
                 </div>
             </div>
 
-            <div className='flex items-center gap-10'>
-                <div className='flex-1 justify-center items-center ml-32 ' >
+            <div className='flex md:flex-row flex-col items-center md:gap-10 gap-16 md:py-0 py-10 md:px-0 px-5'>
+                <div className='flex-1 justify-center items-center md:ml-32 ' >
                     <h1 className={`${jsfont.className} text-[35px] text-[#151875] font-bold`}>
                         20% Discount Of All Products
                     </h1>
@@ -43,7 +43,7 @@ const Discount = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error impedit explicabo autem quibusdam,
                         </p>
                     </div>
-                    <div className={`${lato.className} text-[#B8B8DC] text-[16px] grid grid-cols-2 gap-4`}>
+                    <div className={`${lato.className} text-[#B8B8DC] text-[16px] grid md:grid-cols-2 grid-cols-1 gap-4`}>
                         <h1 className='flex items-center'><TiTick className='text-[#151875]' /> Material expose like metals</h1>
                         <h1 className='flex items-center'><TiTick className='text-[#151875]' /> Clear lines and geomatric figures</h1>
                         <h1 className='flex items-center'><TiTick className='text-[#151875]' />Simple neutral colours.</h1>

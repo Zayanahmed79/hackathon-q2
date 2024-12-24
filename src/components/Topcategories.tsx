@@ -1,6 +1,8 @@
 import React from 'react'
 import { Josefin_Sans } from 'next/font/google'
 import Image from 'next/image';
+import { PiDotsThreeOutlineThin } from "react-icons/pi";
+
 
 
 const jsfont = Josefin_Sans({ subsets: ["latin"] })
@@ -110,6 +112,10 @@ const Topcategories = () => {
                     </div>
 
                 </div>
+            </div>
+            <div className='flex justify-center items-center text-[30px]' >
+            <p><PiDotsThreeOutlineThin />.</p>
+            
             </div>
 
         </div>
