@@ -67,7 +67,7 @@ const Nav = () => {
                     >
                         <CustomDropdown />
                         <li>Pages</li>
-                        <li>Products</li>
+                        <li>Products</li>.
                         <li>Blog</li>
                         <li>Shop</li>
                         <li>Contact</li>
