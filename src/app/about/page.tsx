@@ -37,8 +37,9 @@ const About = () => {
         </p>
       </div>
       {/* TEXT  */}
-      <div className="flex bg-white p-32 pl-60">
-        <div className="bg-white  flex  ">
+      <div className="flex bg-white  ">
+        <div className="bg-white flex flex-row items-center p-16 gap-4 ">
+            {/* images */}
           <div className="flex  ">
             <Image
               src="/images/ab1.png"
@@ -56,13 +57,13 @@ const About = () => {
             />
           </div>
           <div
-            className={`${jsfont.className} flex-1 text-[36px] font-bold p-8 mr-44`}
+            className={`${jsfont.className} w-1/2 h-full text-[36px] font-bold pt-6 `}
           >
-            <h1 className="text-[#151875] pb-6">
+            <h1 className="text-[#151875] pb-4">
               Know About Our Ecomerce Business, History
             </h1>
             <p
-              className={`${lato.className} text-[#8A8FB9] font-semibold text-[16px] pb-12`}
+              className={`${lato.className} text-[#8A8FB9] font-semibold text-[16px] pb-14`}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
               neque ultrices mattis aliquam, malesuada diam est. Malesuada sem
@@ -198,18 +199,17 @@ const About = () => {
         <div className="flex flex-col justify-center items-center ">
           <h1 className={`${lato.className} text-[#151875] text-[22px]  `}>Selina Gomez</h1>
           <p className={`${lato.className} text-[10px] text-[#8A8FB9] pb-3 `}>Ceo At Webecy Digital</p>
-          <p className={`${lato.className } font-bold text-[16px] text-[#8A8FB9] px-96 mx-28 flex justify-center items-center max-w-80% tracking-normal text-center `}>
+          <p className={`${lato.className } font-bold text-[16px] text-[#8A8FB9] flex justify-center items-center px-72 tracking-normal text-center `}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis
             ultrices quam vel dui sollicitudin aliquet id arcu. Nam vitae a enim
             nunc, sed sapien egestas ac nam. Tristique ultrices dolor <br /> aliquam
             lacus volutpat praesent.
           </p>
-          <p className="text-[#FF75B0] flex flex-row gap-0 text-[30px] py-4 pb-12"><RxDash/><GoDash /><RxDash/>
+          <p className="text-[#FF75B0] flex items-center justify-center gap-0 text-[30px] py-4 pb-12"><RxDash/><GoDash /><RxDash/>
           </p>
         </div>
       </div>
-      <div className="bg-white h-80">
-
+      <div className="bg-white h-72">
       </div>
       <Footer/>
     </div>
