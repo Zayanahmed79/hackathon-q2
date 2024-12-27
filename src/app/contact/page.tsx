@@ -21,7 +21,7 @@ const contact = () => {
         <p className={`${lato.className} text-[#101750] font-bold text-[16px]`}>
           Home . Page <span className="text-[#FB2E86]">. Contact Us</span>
         </p>
-      </div>
+        </div>
       <div className="bg-white p-24 grid grid-cols-2 gap-8 pb-52">
         {/* Information */}
         <div>
