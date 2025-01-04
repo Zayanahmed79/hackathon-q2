@@ -1,3 +1,9 @@
+interface RichTextBlock {
+  _key: string;
+  _type: string;
+  children: Array<{ _key: string; _type: string; text: string }>;
+}
+
 export interface ProductType {
   id: string;
   title: string;
@@ -5,9 +11,11 @@ export interface ProductType {
   images:  { asset: { _ref: string; url: string }; alt?: string }[];  
   price: number;
   salePrice: number;
+  overview: string;
   newArrival: boolean;
   discountPercentage?: number;
-  productDetails: string[];
+  productDetails: Array<RichTextBlock>;
   stock: string;
   subCategory: { current: string };
+  tags: string[]
 }

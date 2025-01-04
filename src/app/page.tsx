@@ -1,6 +1,5 @@
 import Discount from "@/components/Discount";
 import Featured from "@/components/Featured";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Latest from "@/components/Latest";
 import Latestblog from "@/components/Latestblog";
@@ -23,7 +22,6 @@ export default function Home() {
       <Topcategories/>
       <Subscribe/>
       <Latestblog/>
-      <Footer/>
     </div>
   );
 }

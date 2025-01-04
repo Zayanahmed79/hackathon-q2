@@ -76,3 +76,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.boxx {
+  box-shadow: 0 4px 12px #d9d6f7
+}

@@ -88,15 +88,11 @@ const Trending = () => {
         {specialProducts.slice(1, 5).map((product) => (
          
           <Link
+            href={`/${product.slug.current}`}
           key={product.slug.current}
-            href={{
-              pathname: `/categories/{${product.slug}}`,
-              query: { slug: "1" },
-            }}
-          >
-            
+            >  
             <div
-              key={product.slug.current}
+              
               className="lg:p-3   bg-white shadow-xl group md:w-[22vw] md:h-[25vw] sm:h-[350px] h-[250px] object-cover "
             >
               <div className="w-full sm:h-[250px] h-[200px] md:h-[18vw] flex justify-center items-center overflow-hidden">
@@ -178,6 +174,7 @@ const Trending = () => {
             >
               {chairProducts.map((product) => (
                 <SwiperSlide key={product.slug.current} className="">
+                  <Link href={`/${product.slug.current}`}>
                   <div className="flex items-start gap-2 ">
                     <div className="lg:w-[100px] md:w-[200px] md:h-[140px] lg:h-[80px] sm:h-[100px] sm:w-[130px] ]">
                       <Image
@@ -201,6 +198,7 @@ const Trending = () => {
                       </p>
                     </div>
                   </div>
+                  </Link>
                 </SwiperSlide>
               ))}
             </Swiper>

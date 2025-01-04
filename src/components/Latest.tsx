@@ -9,13 +9,13 @@ import { LuShoppingCart } from "react-icons/lu";
 import { LuZoomIn } from "react-icons/lu";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const lato = Lato({ subsets: ["latin"], weight: ["400"] });
 const jsfont = Josefin_Sans({ subsets: ["latin"] });
@@ -146,6 +146,7 @@ const Latest = () => {
         >
           {products.map((product) => (
             <SwiperSlide key={product.slug.current}>
+              <Link href={`/${product.slug.current}`}>
               <div className="lg:h-[370px] lg:w-[350px] mb-10 md:h-[350px] md:w-[285px] w-[150px] lg:pl-7 flex flex-col  bg-white rounded-lg overflow-hidden group relative">
                 {/* Product Image */}
                 <div className="relative h-[250px] w-full overflow-hidden">
@@ -205,6 +206,7 @@ const Latest = () => {
                   </p>
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

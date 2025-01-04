@@ -18,28 +18,28 @@ const Featured = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   
-
-  useEffect(() => {
-    async function fetchFeaturedProducts() {
-      try {
-        const res = await fetch("/api/featured");
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await res.json();
-        setProducts(data.products);
-      } catch (error) {
-        setError("Failed to load products.");
-        console.error(error);
-      } finally {
-        setLoading(false);
+useEffect(() => {
+  async function fetchFeaturedProducts() {
+    try {
+      const res = await fetch("/api/featured");
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
       }
+      const data = await res.json();
+
+      // Take only the first 4 products
+      setProducts(data.products.slice(0, 4));
+    } catch (error) {
+      setError("Failed to load products.");
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
+  }
 
-    fetchFeaturedProducts();
-  }, []);
+  fetchFeaturedProducts();
+}, []);
 
-  
 
   if (error) {
     return <div className="text-center text-red-500">{error}</div>;
@@ -113,7 +113,7 @@ const Featured = () => {
       >
         Featured Products
       </h1>
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-row  justify-center gap-6">
 
     
         
@@ -124,7 +124,7 @@ const Featured = () => {
           return (
             <Link 
               key={id} 
-              href={`/${product.subCategory.current}/${product.slug.current}`}>
+              href={`/${product.slug.current}`}>
             <div
               key={id}
               className="relative bg-white flex shadow-xl group flex-col justify-between md:w-[270px] md:h-[361px] h-[300px]"
