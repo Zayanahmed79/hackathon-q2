@@ -15,11 +15,17 @@ export default defineType({
 
     // Blog Content
     defineField({
-      name: "content",
-      type: "array",
-      title: "Blog Content",
-      of: [{ type: "block" }],
-      validation: (Rule) => Rule.required().error("Content is required."),
+      name: 'content',
+      type: 'array',
+      of: [{ type: 'block' }, { type: 'image' }],
+    }),
+
+      // Over View 
+    defineField({
+      name: "overview",
+      type: "string",
+      title: "Overview",
+      validation: (Rule) => Rule.required().max(100).warning("Keep the title concise."),
     }),
 
     // Slug
@@ -28,7 +34,7 @@ export default defineType({
       type: "slug",
       title: "Slug",
       options: {
-        source: "title",
+        source: (doc) => `${doc.title}-${Math.floor(Math.random() * 100000)}`,
         maxLength: 96,
       },
       validation: (Rule) => Rule.required().error("Slug is required."),
@@ -41,6 +47,8 @@ export default defineType({
       title: "Author Name",
       validation: (Rule) => Rule.required().error("Author name is required."),
     }),
+    
+    
 
     // Publishing Date
     defineField({
@@ -55,6 +63,15 @@ export default defineType({
       name: "featuredImage",
       type: "image",
       title: "Featured Image",
+      options: {
+        hotspot: true,
+      },
+    }),
+     
+    defineField({
+      name: "authorImage",
+      type: "image",
+      title: "Author Image",
       options: {
         hotspot: true,
       },

@@ -5,6 +5,7 @@ import CustomDropdown from "./CustomDropdown";
 import { CiSearch } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
 import { CgMenuRightAlt } from "react-icons/cg";
+import Link from "next/link";
 
 const jsfont = Josefin_Sans({ subsets: ["latin"] });
 const lato = Lato({ subsets: ["latin"], weight: ["400"] });
@@ -16,7 +17,11 @@ const Nav = () => {
         <div className={`${jsfont.className} md:h-[80px] bg-white flex items-center justify-around w-full mx-auto`}>
             <div className="flex items-center justify-between w-full px-5 md:px-10 lg:ml-28">
                 {/* Logo */}
-                <h1 className="text-[34px] text-[#0D0E43] font-bold">Hekto</h1>
+                 <Link 
+                 href="/">
+                 <h1 className="text-[34px] text-[#0D0E43] font-bold">Hekto</h1>
+                 </Link>
+                
 
                 {/* Dropdown & Menu (Visible on larger screens) */}
                 <div
@@ -26,7 +31,11 @@ const Nav = () => {
                     <ul className="flex items-center gap-5">
                         <li>Pages</li>
                         <li>Products</li>
-                        <li>Blog</li>
+                        <Link
+                           href="/blog" >
+                            <li>Blog</li>
+                        </Link>
+                        
                         <li>Shop</li>
                         <li>Contact</li>
                     </ul>

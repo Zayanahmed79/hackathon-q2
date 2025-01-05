@@ -19,3 +19,16 @@ export interface ProductType {
   subCategory: { current: string };
   tags: string[]
 }
+
+
+export interface Blogtype{
+  slug: string;
+  featuredImage: string;
+  title: string;
+  authorName: string;
+  publishingDate: string;
+  overview: string;
+}
+
+
+
