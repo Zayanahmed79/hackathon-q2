@@ -10,22 +10,47 @@ export default defineType({
       name: "title",
       type: "string",
       title: "Title",
-      validation: (Rule) => Rule.required().max(100).warning("Keep the title concise."),
+      description: "Enter the title of the blog.",
+      validation: (Rule) =>
+        Rule.required().max(100).warning("Keep the title concise."),
     }),
 
     // Blog Content
     defineField({
-      name: 'content',
-      type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }],
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        { type: "block" }, // For general content like paragraphs
+        { type: "image" }, // For images
+        {
+          type: "object",
+          name: "blockquote",
+          title: "Quote",
+          fields: [
+            {
+              name: "quote",
+              title: "Quote Text",
+              type: "string",
+            },
+            {
+              name: "author",
+              title: "Quote Author",
+              type: "string",
+            },
+          ],
+        },
+      ],
     }),
 
-      // Over View 
+    // Overview
     defineField({
       name: "overview",
       type: "string",
       title: "Overview",
-      validation: (Rule) => Rule.required().max(100).warning("Keep the title concise."),
+      description: "A short summary of the blog.",
+      validation: (Rule) =>
+        Rule.required().max(200).warning("Keep the overview concise."),
     }),
 
     // Slug
@@ -33,8 +58,9 @@ export default defineType({
       name: "slug",
       type: "slug",
       title: "Slug",
+      description: "Unique URL identifier for the blog.",
       options: {
-        source: (doc) => `${doc.title}-${Math.floor(Math.random() * 100000)}`,
+        source: "title",
         maxLength: 96,
       },
       validation: (Rule) => Rule.required().error("Slug is required."),
@@ -45,17 +71,29 @@ export default defineType({
       name: "authorName",
       type: "string",
       title: "Author Name",
+      description: "Name of the blog author.",
       validation: (Rule) => Rule.required().error("Author name is required."),
     }),
-    
-    
+
+    // Author Image
+    defineField({
+      name: "authorImage",
+      type: "image",
+      title: "Author Image",
+      description: "Image of the author.",
+      options: {
+        hotspot: true,
+      },
+    }),
 
     // Publishing Date
     defineField({
       name: "publishingDate",
       type: "datetime",
       title: "Publishing Date",
-      validation: (Rule) => Rule.required().error("Publishing date is required."),
+      description: "Date and time when the blog was published.",
+      validation: (Rule) =>
+        Rule.required().error("Publishing date is required."),
     }),
 
     // Featured Image
@@ -63,15 +101,7 @@ export default defineType({
       name: "featuredImage",
       type: "image",
       title: "Featured Image",
-      options: {
-        hotspot: true,
-      },
-    }),
-     
-    defineField({
-      name: "authorImage",
-      type: "image",
-      title: "Author Image",
+      description: "Main image for the blog.",
       options: {
         hotspot: true,
       },
@@ -82,11 +112,8 @@ export default defineType({
       name: "tags",
       type: "array",
       title: "Tags",
-      of: [
-        {
-          type: "string",
-        },
-      ],
+      description: "Categorize your blog with tags.",
+      of: [{ type: "string" }],
       options: {
         list: [
           { title: "Top Trending", value: "topTrending" },
@@ -101,15 +128,51 @@ export default defineType({
       name: "comments",
       type: "array",
       title: "Comments",
+      description: "User comments for the blog.",
       of: [
         defineField({
           name: "comment",
           type: "object",
           title: "Comment",
           fields: [
-            { name: "name", type: "string", title: "Name", validation: (Rule) => Rule.required() },
-            { name: "comment", type: "text", title: "Comment", validation: (Rule) => Rule.required() },
-            { name: "postedAt", type: "datetime", title: "Posted At", initialValue: () => new Date().toISOString() },
+            {
+              name: "name",
+              type: "string",
+              title: "Name",
+              description: "Name of the commenter.",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "email",
+              type: "string",
+              title: "Email",
+              description:
+                "Email of the commenter (optional, for form validation).",
+              validation: (Rule) => Rule.email(),
+            },
+            {
+              name: "pic",
+              type: "image",
+              title: "Profile Picture",
+              description: "Profile picture of the commenter.",
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              name: "comment",
+              type: "text",
+              title: "Comment",
+              description: "Comment text.",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "postedAt",
+              type: "datetime",
+              title: "Posted At",
+              description: "Timestamp when the comment was posted.",
+              initialValue: () => new Date().toISOString(),
+            },
           ],
         }),
       ],

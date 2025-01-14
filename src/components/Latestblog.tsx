@@ -65,7 +65,7 @@ const Latestblog = () => {
       <div className="flex md:flex-row flex-col gap-10 justify-center items-center">
         {blogs.map((blog: Blogtype) => (
           <div
-            key={blog.slug}
+            key={blog.slug.current}
             className="w-[370px] h-[493px] rounded-md shadow-xl group"
           >
             {/* Featured Image */}

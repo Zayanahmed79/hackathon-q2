@@ -18,7 +18,7 @@ const jsfont = Josefin_Sans({ subsets: ["latin"] });
 
 const Trending = () => {
   const [specialProducts, setSpecialProducts] = useState<ProductType[]>([]); // Special products for the top section
-  const [chairProducts, setChairProducts] = useState<ProductType[]>([]);
+ const [chairProducts, setChairProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState(true);
 
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,7 @@ const Trending = () => {
     }, 2000); // Change slides every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); 
 
   useEffect(() => {
     // Fetch products from the API
