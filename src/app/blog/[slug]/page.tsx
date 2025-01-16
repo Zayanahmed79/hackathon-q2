@@ -275,7 +275,7 @@ const SingleBlogPage = () => {
                     value: { asset: { url: string }; alt: string };
                   }) => {
                     imageIndex++; // Increment the index for each image
-                    const isFirstTwoImages = imageIndex <= 4;
+                    const isFirstTwoImages = imageIndex <= 2;
 
                     return (
                       <div
